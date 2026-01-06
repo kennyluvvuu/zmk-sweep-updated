@@ -53,7 +53,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ENTER    │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp ENTER
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                        &mt LGUI(LC(LS(LALT))) TAB     &kp LSHIFT     &kp SPACE  &lt RIG TAB
+                        &mt LGUI(LC(LS(LALT))) TAB     &kp LSHIFT     &kp SPACE   &to LEF
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -65,10 +65,10 @@
             &kp N1    &kp N2     &kp N3     &kp N4     &kp N5          &kp N6     &kp N7     &kp N8     &kp N9      &kp N0
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ DELETE   │ CapsLock │ PrintSc  │  INSERT  │          |   │ LEFT     │ DOWN     │ UP       │ RIGHT    │          |
-            &kp DEL   &kp CAPS   &kp PSCRN  &kp INS     &trans        &kp LARW   &kp DARW   &kp UARW   &kp RARW     &trans
+            &kp DEL   &kp CAPS   &kp PSCRN  &kp INS     &trans        &kp LARW   &kp DARW   &kp UARW   &kp RARW     &to TRI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │ HOME     │ PAGE DN  │ PAGE UP  │ END      │          |
-            &trans    &trans     &trans     &trans      &trans         &kp HOME   &kp PG_DN  &kp PG_UP  &kp END     &to TRI
+            &trans    &trans     &trans     &trans      &trans         &kp HOME   &kp PG_DN  &kp PG_UP  &kp END     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                             &to MAC     &kp ESC        &trans     &to LEF
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -87,7 +87,7 @@
         //│  '       │  ]       │  }       │  )       │          │   │    \     │  _       │  +       │  │       │   ?      │
             &kp SQT     &kp RBKT   &kp RBRC   &kp RPAR   &trans         &kp BSLH   &kp UNDER  &kp PLUS   &kp PIPE  &kp QMARK
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &to MAC     &trans         &trans     &to LEF
+                                            &to MAC     &trans         &trans     &to RIG
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
