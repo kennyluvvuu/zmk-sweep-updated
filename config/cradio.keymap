@@ -70,7 +70,7 @@
         //│          │          │          │          │          │   │ HOME     │ PAGE DN  │ PAGE UP  │ END      │          |
             &trans    &trans     &trans     &trans      &trans         &kp HOME   &kp PG_DN  &kp PG_UP  &kp END     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &to MAC     &kp ESC        &trans     &to LEF
+                                            &to MAC     &trans        &trans     &to LEF
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -87,7 +87,7 @@
         //│  '       │  ]       │  }       │  )       │          │   │    \     │  _       │  +       │  │       │   ?      │
             &kp SQT     &kp RBKT   &kp RBRC   &kp RPAR   &trans         &kp BSLH   &kp UNDER  &kp PLUS   &kp PIPE  &kp QMARK
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &to MAC     &trans         &trans     &to RIG
+                                            &to MAC     &kp ESC         &trans     &to RIG
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
