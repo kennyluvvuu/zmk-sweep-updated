@@ -15,9 +15,5 @@
 include:
   - board: nice_nano
     shield: cradio_left
-    snippets: [studio-rpc-usb-uart]
   - board: nice_nano
     shield: cradio_right
-    snippets: [studio-rpc-usb-uart]
-  - board: nice_nano
-    shield: settings_reset
