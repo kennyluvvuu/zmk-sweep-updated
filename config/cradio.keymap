@@ -11,10 +11,10 @@
 #define HRMR(k1,k2) &ht RGUI k1  &ht RALT k2
 
 #define MAC 0
-#define COL 1
-#define RIG 2
-#define LEF 3
-#define TRI 4
+#define RIG 1
+#define LEF 2
+#define TRI 3
+#define GAM 4
 
 / {
     leds {
@@ -71,22 +71,6 @@
             >;
         };
 
-         colemak_dh_layer {
-              bindings = <
-          //╭──────────┬──────────┬──────────┬──────────┬──────────╮ ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-          //│        Q │        W │        F │        P │        B │ │        J │        L │        U │        Y │        ; │
-              &kp Q    &kp W    &kp F    &kp P    &kp B                   &kp J    &kp L    &kp U    &kp Y         &kp SEMI 
-          //├──────────┼──────────┼──────────┼──────────┼──────────┤ ├──────────┼──────────┼──────────┼──────────┼──────────┤
-          //│        A │        R │        S │        T │        G │ │        M │        N │        E │        I │        O │
-              &kp A        &kp R     HRML(S,          T)      &kp G       &kp M    HRMR(N,         E)       &kp I    &kp O
-          //├──────────┼──────────┼──────────┼──────────┼──────────┤ ├──────────┼──────────┼──────────┼──────────┼──────────┤
-          //│        Z │        X │        C │        D │        V │ │        K │        H │      , < │      . > │        / │
-              &kp Z        &kp X      &kp C       &kp D      &kp V         &kp K      &kp H    &kp COMMA &kp DOT   &kp FSLH
-          //╰──────────┴──────────┴──────────┼──────────┼──────────┤ ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &lt LEF TAB  &mt LSHIFT ENTER   &mt RCTRL BSPC   &lt RIG SPACE
-          //                                 ╰──────────┴──────────╯         ╰──────────┴──────────╯
-              >;
-        };
 
         right_layer {
             bindings = <
@@ -94,11 +78,11 @@
         //│ 1        │  2       │  3       │  4       │  5       │   │ 6        │ 7        │ 8        │ 9        │   0      │
             &kp N1    &kp N2     &kp N3     &kp N4     &kp N5          &kp N6     &kp N7     &kp N8     &kp N9      &kp N0
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ DELETE   │ CapsLock │ CapsWord │  INSERT  │          |   │ LEFT     │ DOWN     │ UP       │ RIGHT    │          |
-            &kp DEL   &kp CAPS   &caps_word  &kp INS     &trans        &kp LARW   &kp DARW   &kp UARW   &kp RARW     &trans
+        //│ DELETE   │ CapsLock │ CapsWord │  INSERT  │  LANG    |   │ LEFT     │ DOWN     │ UP       │ RIGHT    │          |
+            &kp DEL   &kp CAPS   &caps_word  &kp INS   &kp LC(SPACE) &kp LARW   &kp DARW   &kp UARW   &kp RARW     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │ HOME     │ PAGE DN  │ PAGE UP  │ END      │          |
-            &tog COL   &trans     &trans     &trans      &trans         &kp HOME   &kp PG_DN  &kp PG_UP  &kp END     &trans
+            &tog GAM    &trans      &trans      &trans    &trans         &kp HOME   &kp PG_DN  &kp PG_UP  &kp END     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &kp ESC        &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -138,5 +122,30 @@
         //                                  ╰───────────┴──────────╯     ╰──────────┴────────────╯ 
             >;
         };
+
+        gaming_layer {
+            bindings = 
+                &kp ESC   &kp Q  &kp W  &kp E  &kp R      &none  &none  &none  &none  &tog GAMING
+                &kp LSHFT &kp A  &kp S  &kp D  &kp F      &none  &none  &none  &none  &none
+                &kp LCTRL &kp Z  &kp X  &kp C  &kp V      &none  &none  &none  &none  &none
+                                        &mo RIG &kp SPACE  &tog GAM &none
+            >;
+        };
+        /* colemak_dh_layer { */
+        /*       bindings = < */
+        /*   //╭──────────┬──────────┬──────────┬──────────┬──────────╮ ╭──────────┬──────────┬──────────┬──────────┬──────────╮ */
+        /*   //│        Q │        W │        F │        P │        B │ │        J │        L │        U │        Y │        ; │ */
+        /*       &kp Q    &kp W    &kp F    &kp P    &kp B                   &kp J    &kp L    &kp U    &kp Y         &kp SEMI  */
+        /*   //├──────────┼──────────┼──────────┼──────────┼──────────┤ ├──────────┼──────────┼──────────┼──────────┼──────────┤ */
+        /*   //│        A │        R │        S │        T │        G │ │        M │        N │        E │        I │        O │ */
+        /*       &kp A        &kp R     HRML(S,          T)      &kp G       &kp M    HRMR(N,         E)       &kp I    &kp O */
+        /*   //├──────────┼──────────┼──────────┼──────────┼──────────┤ ├──────────┼──────────┼──────────┼──────────┼──────────┤ */
+        /*   //│        Z │        X │        C │        D │        V │ │        K │        H │      , < │      . > │        / │ */
+        /*       &kp Z        &kp X      &kp C       &kp D      &kp V         &kp K      &kp H    &kp COMMA &kp DOT   &kp FSLH */
+        /*   //╰──────────┴──────────┴──────────┼──────────┼──────────┤ ├──────────┼──────────┼──────────┴──────────┴──────────╯ */
+        /*                                     &lt LEF TAB  &mt LSHIFT ENTER   &mt RCTRL BSPC   &lt RIG SPACE */
+        /*   //                                 ╰──────────┴──────────╯         ╰──────────┴──────────╯ */
+        /*       >; */
+        /* }; */
     };
 };
