@@ -2,7 +2,7 @@
     leds {
         compatible = "gpio-leds";
         blue_led: led_0 {
-            gpios = <&gpio0 15 GPIO_ACTIVE_LOW>;  // P0.15 - синий LED на Pro Micro nRF52840
+            gpios = <&gpio0 15 GPIO_ACTIVE_HIGH>;  // P0.15 - синий LED на Pro Micro nRF52840
             label = "Blue LED";
         };
     };
