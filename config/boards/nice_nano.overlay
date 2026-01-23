@@ -8,6 +8,6 @@
     };
     
     aliases {
-        led-indicator = &blue_led;
+        indicator-led = &blue_led;
     };
 };
