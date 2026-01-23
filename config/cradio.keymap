@@ -17,6 +17,20 @@
 #define TRI 4
 
 / {
+    leds {
+        compatible = "gpio-leds";
+        blue_led: led_0 {
+            gpios = <&gpio0 15 GPIO_ACTIVE_HIGH>;
+            label = "Blue LED";
+        };
+    };
+    
+    aliases {
+        indicator-led = &blue_led;
+    };
+};
+
+/ {
     behaviors {
         ht: hold_tap {
             label = "hold_tap";
